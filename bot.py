@@ -15,7 +15,7 @@ telebot.apihelper.READ_TIMEOUT = 300
 # Environment variables with fallbacks
 BOT_TOKEN = os.getenv("BOT_TOKEN", "8854251593:AAGbhRYjYIrtcOZc1Z36j7lpsewuaIDXo5E")
 PASSWORD = os.getenv("PASSWORD", "2162340")
-STATIC_WEBAPP_URL = os.getenv("WEBAPP_URL", None)
+STATIC_WEBAPP_URL = os.getenv("WEBAPP_URL", "https://fazliddinyangiboev1985-web.github.io/TelegramBot-1C/")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 AUTH_FILE = os.path.join(BASE_DIR, "authenticated_users.json")
@@ -26,6 +26,8 @@ HTTP_PORT = 8085
 WEBAPP_URL = STATIC_WEBAPP_URL
 
 def start_http_server():
+    if not os.path.exists(WEB_APP_DIR):
+        return
     class CustomHandler(http.server.SimpleHTTPRequestHandler):
         def __init__(self, *args, **kwargs):
             super().__init__(*args, directory=WEB_APP_DIR, **kwargs)
@@ -36,15 +38,15 @@ def start_http_server():
         with socketserver.TCPServer(("", HTTP_PORT), CustomHandler) as httpd:
             httpd.serve_forever()
     except Exception as e:
-        print(f"HTTP Server error: {e}")
+        print(f"HTTP Server skipped: {e}")
 
 def start_cloudflare_tunnel():
     global WEBAPP_URL
     if STATIC_WEBAPP_URL:
         return
 
-    cmd = ["npx", "cloudflared", "tunnel", "--url", f"http://localhost:{HTTP_PORT}"]
     try:
+        cmd = ["npx", "cloudflared", "tunnel", "--url", f"http://localhost:{HTTP_PORT}"]
         proc = subprocess.Popen(
             cmd, 
             shell=True, 
@@ -58,18 +60,16 @@ def start_cloudflare_tunnel():
             m = re.search(r"https://[a-zA-Z0-9-]+\.trycloudflare\.com", line)
             if m:
                 WEBAPP_URL = m.group(0)
-                print("==================================================")
-                print(" Cloudflare WebApp HTTPS URL:", WEBAPP_URL)
-                print("==================================================")
                 break
     except Exception as e:
-        print(f"Cloudflare Tunnel error: {e}")
+        print(f"Cloudflare Tunnel skipped: {e}")
 
-# Start local server and tunnel only if STATIC_WEBAPP_URL is not set
-if not STATIC_WEBAPP_URL:
+# Try background local server if needed
+try:
     threading.Thread(target=start_http_server, daemon=True).start()
     threading.Thread(target=start_cloudflare_tunnel, daemon=True).start()
-    time.sleep(3)
+except Exception:
+    pass
 
 def load_auth_users():
     if os.path.exists(AUTH_FILE):
@@ -110,7 +110,7 @@ bot = telebot.TeleBot(BOT_TOKEN)
 
 def get_auth_keyboard():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-    url = WEBAPP_URL if WEBAPP_URL else "https://telegram.org"
+    url = WEBAPP_URL if WEBAPP_URL else "https://fazliddinyangiboev1985-web.github.io/TelegramBot-1C/"
     btn = types.KeyboardButton(
         text="🔐 Паролни киритиш (Форма)", 
         web_app=types.WebAppInfo(url=url)
