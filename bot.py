@@ -13,7 +13,7 @@ telebot.apihelper.CONNECT_TIMEOUT = 120
 telebot.apihelper.READ_TIMEOUT = 300
 
 # Environment variables with fallbacks
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8854251593:AAGbhRYjYIrtcOZc1Z36j7lpsewuaIDXo5E")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8854251593:AAGMFK8-6GCfXaNaTeVBnm2JnDDwFm2Ix0U")
 PASSWORD = os.getenv("PASSWORD", "2162340")
 STATIC_WEBAPP_URL = os.getenv("WEBAPP_URL", "https://fazliddinyangiboev1985-web.github.io/TelegramBot-1C/")
 
@@ -64,7 +64,6 @@ def start_cloudflare_tunnel():
     except Exception as e:
         print(f"Cloudflare Tunnel skipped: {e}")
 
-# Try background local server if needed
 try:
     threading.Thread(target=start_http_server, daemon=True).start()
     threading.Thread(target=start_cloudflare_tunnel, daemon=True).start()
