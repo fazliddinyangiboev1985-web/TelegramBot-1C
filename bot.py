@@ -16,37 +16,40 @@ telebot.apihelper.READ_TIMEOUT = 300
 BOT_TOKEN = os.getenv("BOT_TOKEN", "8854251593:AAGMFK8-6GCfXaNaTeVBnm2JnDDwFm2Ix0U")
 PASSWORD = os.getenv("PASSWORD", "2162340")
 STATIC_WEBAPP_URL = os.getenv("WEBAPP_URL", "https://fazliddinyangiboev1985-web.github.io/TelegramBot-1C/")
+PORT = int(os.getenv("PORT", 8085))
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 AUTH_FILE = os.path.join(BASE_DIR, "authenticated_users.json")
 CLOUD_FILES_FILE = os.path.join(BASE_DIR, "cloud_files.json")
 WEB_APP_DIR = os.path.join(BASE_DIR, "web_app")
 
-HTTP_PORT = 8085
 WEBAPP_URL = STATIC_WEBAPP_URL
 
 def start_http_server():
-    if not os.path.exists(WEB_APP_DIR):
-        return
     class CustomHandler(http.server.SimpleHTTPRequestHandler):
         def __init__(self, *args, **kwargs):
-            super().__init__(*args, directory=WEB_APP_DIR, **kwargs)
+            if os.path.exists(WEB_APP_DIR):
+                super().__init__(*args, directory=WEB_APP_DIR, **kwargs)
+            else:
+                super().__init__(*args, **kwargs)
         def log_message(self, format, *args):
             pass
 
     try:
-        with socketserver.TCPServer(("", HTTP_PORT), CustomHandler) as httpd:
+        socketserver.TCPServer.allow_reuse_address = True
+        with socketserver.TCPServer(("0.0.0.0", PORT), CustomHandler) as httpd:
+            print(f"Web server active on 0.0.0.0:{PORT}")
             httpd.serve_forever()
     except Exception as e:
         print(f"HTTP Server skipped: {e}")
 
 def start_cloudflare_tunnel():
     global WEBAPP_URL
-    if STATIC_WEBAPP_URL:
+    if os.getenv("RENDER") or STATIC_WEBAPP_URL:
         return
 
     try:
-        cmd = ["npx", "cloudflared", "tunnel", "--url", f"http://localhost:{HTTP_PORT}"]
+        cmd = ["npx", "cloudflared", "tunnel", "--url", f"http://localhost:{PORT}"]
         proc = subprocess.Popen(
             cmd, 
             shell=True, 
@@ -64,11 +67,14 @@ def start_cloudflare_tunnel():
     except Exception as e:
         print(f"Cloudflare Tunnel skipped: {e}")
 
-try:
-    threading.Thread(target=start_http_server, daemon=True).start()
-    threading.Thread(target=start_cloudflare_tunnel, daemon=True).start()
-except Exception:
-    pass
+# Start web server thread for Render port health check
+threading.Thread(target=start_http_server, daemon=True).start()
+
+if not os.getenv("RENDER"):
+    try:
+        threading.Thread(target=start_cloudflare_tunnel, daemon=True).start()
+    except Exception:
+        pass
 
 def load_auth_users():
     if os.path.exists(AUTH_FILE):
