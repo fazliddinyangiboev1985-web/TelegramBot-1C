@@ -1,0 +1,102 @@
+{
+  "ChromeSetup.exe": {
+    "file_id": "BQACAgIAAxkBAAM4asfDGIIFPr6NWHmlZrwW6qmM1IQAAi6yAAKrDzhK0RfmhPzHv5I9BA",
+    "title": "ChromeSetup",
+    "filename": "ChromeSetup.exe"
+  },
+  "Fix_1C_Firewall.bat": {
+    "file_id": "BQACAgIAAxkBAAM6asfDGU53OR2LEc0e-u2dsYZeRCoAAi-yAAKrDzhKpJgI-r_5HzA9BA",
+    "title": "Fix 1C Firewall",
+    "filename": "Fix_1C_Firewall.bat"
+  },
+  "gXprinter_2021shtrix.2.exe": {
+    "file_id": "BQACAgIAAxkBAAM8asfDMs8u8QJ4ZICZW7acajlUGyEAAjCyAAKrDzhKpgL265ZQeMI9BA",
+    "title": "gXprinter 2021shtrix.2",
+    "filename": "gXprinter_2021shtrix.2.exe"
+  },
+  "httpd-2.4.53-o111n-x64-vs17_(2).zip": {
+    "file_id": "BQACAgIAAxkBAAM-asfDPPsz9bZTe5opdmBIwz0vou4AAjGyAAKrDzhKrvNK5xfQJUk9BA",
+    "title": "httpd 2.4.53 o111n x64 vs17 (2)",
+    "filename": "httpd-2.4.53-o111n-x64-vs17_(2).zip"
+  },
+  "oCam_v490.0.exe": {
+    "file_id": "BQACAgIAAxkBAANAasfDQfAd1A7TUHuVXnGDbNO2iVkAAjKyAAKrDzhK9lcAAXFj9LuCPQQ",
+    "title": "oCam v490.0",
+    "filename": "oCam_v490.0.exe"
+  },
+  "Office_ProPlus_2016.exe": {
+    "file_id": "BQACAgIAAxkBAANCasfDkM0sZVSPMiWfQVLD9kMsVnYAAjeyAAKrDzhK2SXc_MYcuco9BA",
+    "title": "Office ProPlus 2016",
+    "filename": "Office_ProPlus_2016.exe"
+  },
+  "pgadmin4-2.1-x86.exe": {
+    "file_id": "BQACAgIAAxkBAANEasfDqLGAF2XVygWSnxfpoPgXvE8AAjiyAAKrDzhKwEnwixHSxSA9BA",
+    "title": "pgadmin4 2.1 x86",
+    "filename": "pgadmin4-2.1-x86.exe"
+  },
+  "PostgreSQL_1C_11.12_64bit_Setup.exe": {
+    "file_id": "BQACAgIAAxkBAANGasfDtCEIpmre4eoOy9f4QkwmjjsAAjmyAAKrDzhKqtMyc_VOaTg9BA",
+    "title": "PostgreSQL 1C 11.12 64bit Setup",
+    "filename": "PostgreSQL_1C_11.12_64bit_Setup.exe"
+  },
+  "Radmin_VPN_2.0.4899.9.exe": {
+    "file_id": "BQACAgIAAxkBAANIasfD0aIS2s_1ekHXyvIN-2eJKnUAAjuyAAKrDzhK3M6ISGRsxKw9BA",
+    "title": "Radmin VPN 2.0.4899.9",
+    "filename": "Radmin_VPN_2.0.4899.9.exe"
+  },
+  "SkrinshoterSetup_4.83.exe": {
+    "file_id": "BQACAgIAAxkBAANKasfD2E6-5dCumImcbK3unRpx8fAAAj-yAAKrDzhKG0HwuUiwhlM9BA",
+    "title": "SkrinshoterSetup 4.83",
+    "filename": "SkrinshoterSetup_4.83.exe"
+  },
+  "SQLBackupAndFTPSetup_(3).exe": {
+    "file_id": "BQACAgIAAxkBAANMasfD3oXaWiYudJa-wEdOcdiT7K0AAkGyAAKrDzhK2B3OOZZ39Ug9BA",
+    "title": "SQLBackupAndFTPSetup (3)",
+    "filename": "SQLBackupAndFTPSetup_(3).exe"
+  },
+  "start_confs_(2).bat": {
+    "file_id": "BQACAgIAAxkBAANOasfD4ReWSlhraip3yjdNuRXBPGoAAkKyAAKrDzhKEl5qOzMemmI9BA",
+    "title": "start confs (2)",
+    "filename": "start_confs_(2).bat"
+  },
+  "SumatraPDF-3.5.2-64.exe": {
+    "file_id": "BQACAgIAAxkBAANQasfD5p7tjSsEMTg4OWXnLWAaHt0AAkSyAAKrDzhKfH_pZwkZyK89BA",
+    "title": "SumatraPDF 3.5.2 64",
+    "filename": "SumatraPDF-3.5.2-64.exe"
+  },
+  "VC_redist.x64_(2).exe": {
+    "file_id": "BQACAgIAAxkBAANSasfD7MOKidhfZlIe8o_Nisv9iwADRrIAAqsPOErn9ks84uEr7j0E",
+    "title": "VC redist.x64 (2)",
+    "filename": "VC_redist.x64_(2).exe"
+  },
+  "w10-digital-activation.rar": {
+    "file_id": "BQACAgIAAxkBAANUasfD8EkyTikXSPnlh4kugNu35pgAAkeyAAKrDzhK5psD-An6Xus9BA",
+    "title": "w10 digital activation",
+    "filename": "w10-digital-activation.rar"
+  },
+  "winrar 6.0.0 x64 ru (@kompyuter_akademiyasi).exe": {
+    "file_id": "BQACAgIAAxkBAANWasfD9FlE6P8J4jamdZS18-zfZGEAAkiyAAKrDzhKdEdhUtec7SE9BA",
+    "title": "winrar 6.0.0 x64 ru (@kompyuter akademiyasi)",
+    "filename": "winrar 6.0.0 x64 ru (@kompyuter_akademiyasi).exe"
+  },
+  "XPrinter Driver Setup V7.77.exe": {
+    "file_id": "BQACAgIAAxkBAANYasfD9252s9r19HraxA_YoYkO9sAAAkqyAAKrDzhKtboHAqHaCjU9BA",
+    "title": "XPrinter Driver Setup V7.77",
+    "filename": "XPrinter Driver Setup V7.77.exe"
+  },
+  "Ошибка CredSSP.txt": {
+    "file_id": "BQACAgIAAxkBAANaasfD-o6agYNVXHzkqr2IBNFq-asAAkyyAAKrDzhKwMgUSmQl_b49BA",
+    "title": "Ошибка CredSSP",
+    "filename": "Ошибка CredSSP.txt"
+  },
+  "Чистка кэша.bat": {
+    "file_id": "BQACAgIAAxkBAANcasfD_dODkuCg-AfWDKSAUNfPNM8AAk2yAAKrDzhKGfkE7EfvtD09BA",
+    "title": "Чистка кэша",
+    "filename": "Чистка кэша.bat"
+  },
+  "8.3.16.1063x64.exe": {
+    "file_id": "BQACAgIAAxkBAANeasfEMZwXDVSuEWh_ATKXWXveeTwAAlCyAAKrDzhKI8SVp7uBk3I9BA",
+    "title": "8.3.16.1063x64",
+    "filename": "8.3.16.1063x64.exe"
+  }
+}
